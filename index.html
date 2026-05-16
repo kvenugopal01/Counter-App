@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern, professional counter application built with HTML, CSS, and JavaScript."
+    />
+    <title>Pro Counter App</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="app-header">
+      <div class="header-brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-name">ProCounter</span>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button
+        id="theme-toggle"
+        class="theme-btn"
+        aria-label="Toggle dark/light mode"
+        title="Toggle Theme (T)"
+      >
+        <span class="theme-icon" id="theme-icon">🌙</span>
+        <span class="theme-label" id="theme-label">Dark Mode</span>
+      </button>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="app-main" role="main">
+      <!-- Counter Card -->
+      <section class="counter-card" aria-label="Counter Application">
+        <!-- Card Header -->
+        <div class="card-header">
+          <h1 class="card-title">Counter</h1>
+          <p class="card-subtitle">Track your count in real-time</p>
+        </div>
+
+        <!-- Counter Display -->
+        <div
+          class="counter-display"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-label="Current counter value"
+        >
+          <div class="counter-ring">
+            <span id="counter-value" class="counter-value">0</span>
+          </div>
+        </div>
+
+        <!-- Status Badge -->
+        <div class="status-badge-wrapper">
+          <span id="status-badge" class="status-badge status-neutral">
+            Neutral
+          </span>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group" role="group" aria-label="Counter controls">
+          <button
+            id="btn-decrement"
+            class="btn btn-decrement"
+            aria-label="Decrement counter"
+            title="Decrement (Arrow Down / D)"
+          >
+            <span class="btn-icon">−</span>
+            <span class="btn-label">Decrement</span>
+          </button>
+
+          <button
+            id="btn-reset"
+            class="btn btn-reset"
+            aria-label="Reset counter to zero"
+            title="Reset (R)"
+          >
+            <span class="btn-icon">↺</span>
+            <span class="btn-label">Reset</span>
+          </button>
+
+          <button
+            id="btn-increment"
+            class="btn btn-increment"
+            aria-label="Increment counter"
+            title="Increment (Arrow Up / I)"
+          >
+            <span class="btn-icon">+</span>
+            <span class="btn-label">Increment</span>
+          </button>
+        </div>
+
+        <!-- Step Size Control -->
+        <div class="step-control">
+          <label for="step-input" class="step-label">Step Size:</label>
+          <div class="step-input-wrapper">
+            <button id="step-down" class="step-btn" aria-label="Decrease step">−</button>
+            <input
+              id="step-input"
+              type="number"
+              class="step-input"
+              value="1"
+              min="1"
+              max="100"
+              aria-label="Step size"
+            />
+            <button id="step-up" class="step-btn" aria-label="Increase step">+</button>
+          </div>
+        </div>
+
+        <!-- History Section -->
+        <div class="history-section">
+          <div class="history-header">
+            <h2 class="history-title">History</h2>
+            <button id="btn-clear-history" class="clear-history-btn" aria-label="Clear history">
+              Clear
+            </button>
+          </div>
+          <ul id="history-list" class="history-list" aria-label="Counter history" role="log">
+            <li class="history-empty">No history yet. Start counting!</li>
+          </ul>
+        </div>
+
+        <!-- Keyboard Shortcuts -->
+        <div class="shortcuts-section">
+          <h3 class="shortcuts-title">⌨️ Keyboard Shortcuts</h3>
+          <div class="shortcuts-grid">
+            <div class="shortcut-item">
+              <kbd>↑</kbd> or <kbd>I</kbd>
+              <span>Increment</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>↓</kbd> or <kbd>D</kbd>
+              <span>Decrement</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>R</kbd>
+              <span>Reset</span>
+            </div>
+            <div class="shortcut-item">
+              <kbd>T</kbd>
+              <span>Theme</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="app-footer">
+      <p>Built with ❤️ using HTML, CSS &amp; JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
